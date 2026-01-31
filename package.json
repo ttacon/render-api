@@ -1,7 +1,7 @@
 {
   "name": "render-api",
   "version": "0.0.0-development",
-  "description": "TypeScript Node.js client for the Render API",
+  "description": "TypeScript client for the Render API",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,10 +21,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest",
-    "test:run": "vitest run",
+    "build": "bun run build:esm && bun run build:cjs && bun run build:types",
+    "build:esm": "bun build src/index.ts --outdir dist --format esm --sourcemap=external --target=node",
+    "build:cjs": "bun build src/index.ts --outfile dist/index.cjs --format cjs --sourcemap=external --target=node",
+    "build:types": "tsc --emitDeclarationOnly --declaration --outDir dist",
+    "test": "bun test --watch",
+    "test:run": "bun test",
     "lint": "biome lint src scripts",
     "lint:fix": "biome lint --write src scripts",
     "format": "biome format --write src scripts",
@@ -32,8 +34,8 @@
     "check": "biome check src scripts",
     "check:fix": "biome check --write src scripts",
     "typecheck": "tsc --noEmit",
-    "repl": "npx tsx scripts/repl.ts",
-    "prepublishOnly": "npm run build"
+    "repl": "bun scripts/repl.ts",
+    "prepublishOnly": "bun run build"
   },
   "repository": {
     "type": "git",
@@ -45,7 +47,7 @@
     "api",
     "client",
     "typescript",
-    "nodejs"
+    "bun"
   ],
   "author": "NovaCove",
   "license": "MIT",
@@ -53,9 +55,6 @@
     "url": "https://github.com/NovaCove/node-render-api/issues"
   },
   "homepage": "https://github.com/NovaCove/node-render-api#readme",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "dependencies": {
     "zod": "^3.23.8"
   },
@@ -63,11 +62,8 @@
     "@biomejs/biome": "^2.3.13",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/node": "^20.14.0",
+    "@types/bun": "^1.1.6",
     "semantic-release": "^24.0.0",
-    "tsup": "^8.1.0",
-    "tsx": "^4.16.0",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "typescript": "^5.4.5"
   }
 }
