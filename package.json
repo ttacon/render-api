@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NovaCove/render-node.git"
+    "url": "git+https://github.com/ttacon/render-node.git"
   },
   "keywords": [
     "render",
@@ -49,12 +49,12 @@
     "typescript",
     "bun"
   ],
-  "author": "NovaCove",
+  "author": "Trey Tacon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NovaCove/render-node/issues"
+    "url": "https://github.com/ttacon/render-node/issues"
   },
-  "homepage": "https://github.com/NovaCove/render-node#readme",
+  "homepage": "https://github.com/ttacon/render-node#readme",
   "dependencies": {
     "zod": "^3.23.8"
   },
