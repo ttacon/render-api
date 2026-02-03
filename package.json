@@ -35,6 +35,8 @@
     "check:fix": "biome check --write src scripts",
     "typecheck": "tsc --noEmit",
     "repl": "bun scripts/repl.ts",
+    "integration": "bun run scripts/integration-test.ts",
+    "integration:ci": "bun run scripts/integration-test.ts --skip services",
     "prepublishOnly": "bun run build"
   },
   "repository": {
