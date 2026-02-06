@@ -38,7 +38,7 @@ export const PostgresPlanSchema = z.enum([
 ]);
 export type PostgresPlan = z.infer<typeof PostgresPlanSchema>;
 
-export const PostgresVersionSchema = z.enum(['11', '12', '13', '14', '15', '16']);
+export const PostgresVersionSchema = z.enum(['11', '12', '13', '14', '15', '16', '17', '18']);
 export type PostgresVersion = z.infer<typeof PostgresVersionSchema>;
 
 export const DatabaseRoleSchema = z.enum(['primary', 'replica']);
