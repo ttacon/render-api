@@ -99,7 +99,7 @@ export type PostgresParameterOverrides = z.infer<typeof PostgresParameterOverrid
 
 export const PostgresSchema = z.object({
   id: z.string(),
-  ipAllowList: z.array(CidrBlockAndDescriptionSchema),
+  ipAllowList: z.array(CidrBlockAndDescriptionSchema).optional(),
   createdAt: z.string(),
   updatedAt: z.string(),
   expiresAt: z.string().optional(),
