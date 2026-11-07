@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ttacon/render-api/compare/v1.2.2...v1.2.3) (2026-11-07)
+
+
+### Bug Fixes
+
+* allow enabled as subdomain policy ([703fa47](https://github.com/ttacon/render-api/commit/703fa47ac52a42ed35fe451eba4117c4ca3e4d35))
+
 ## [1.2.2](https://github.com/ttacon/render-api/compare/v1.2.1...v1.2.2) (2026-02-07)
 
 
