@@ -21,6 +21,8 @@ import {
 // Service-specific Types
 // ============================================================================
 
+const subdomainPolicySchemaEnum = z.enum(['allow', 'disallow', 'enabled']);
+
 export const MaintenanceModeSchema = z.object({
   enabled: z.boolean().optional(),
   uri: z.string().optional(),
@@ -210,7 +212,7 @@ export const WebServiceDetailsSchema = z.object({
   url: z.string(),
   buildPlan: BuildPlanSchema,
   maxShutdownDelaySeconds: z.number().optional(),
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type WebServiceDetails = z.infer<typeof WebServiceDetailsSchema>;
 
@@ -230,7 +232,7 @@ export const WebServiceDetailsPOSTSchema = z.object({
   region: RegionSchema.optional(),
   buildPlan: BuildPlanSchema.optional(),
   maxShutdownDelaySeconds: z.number().optional(),
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type WebServiceDetailsPOST = z.infer<typeof WebServiceDetailsPOSTSchema>;
 
@@ -248,7 +250,7 @@ export const WebServiceDetailsPATCHSchema = z.object({
   runtime: ServiceRuntimeSchema.optional(),
   buildPlan: BuildPlanSchema.optional(),
   maxShutdownDelaySeconds: z.number().optional(),
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type WebServiceDetailsPATCH = z.infer<typeof WebServiceDetailsPATCHSchema>;
 
@@ -351,7 +353,7 @@ export const StaticSiteDetailsSchema = z.object({
   previews: PreviewsSchema.optional(),
   url: z.string(),
   buildPlan: BuildPlanSchema,
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type StaticSiteDetails = z.infer<typeof StaticSiteDetailsSchema>;
 
@@ -362,7 +364,7 @@ export const StaticSiteDetailsPOSTSchema = z.object({
   pullRequestPreviewsEnabled: z.enum(['yes', 'no']).optional(),
   previews: PreviewsSchema.optional(),
   buildPlan: BuildPlanSchema.optional(),
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type StaticSiteDetailsPOST = z.infer<typeof StaticSiteDetailsPOSTSchema>;
 
@@ -373,7 +375,7 @@ export const StaticSiteDetailsPATCHSchema = z.object({
   pullRequestPreviewsEnabled: z.enum(['yes', 'no']).optional(),
   previews: PreviewsSchema.optional(),
   buildPlan: BuildPlanSchema.optional(),
-  renderSubdomainPolicy: z.enum(['allow', 'disallow']).optional(),
+  renderSubdomainPolicy: subdomainPolicySchemaEnum,
 });
 export type StaticSiteDetailsPATCH = z.infer<typeof StaticSiteDetailsPATCHSchema>;
 
