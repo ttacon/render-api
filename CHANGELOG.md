@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/ttacon/render-api/compare/v1.2.3...v1.2.4) (2026-11-09)
+
+
+### Bug Fixes
+
+* cleanup smoke tests ([342b84d](https://github.com/ttacon/render-api/commit/342b84df7d50b728cc0b7fee81bb0bb2b7f3c9fb))
+
 ## [1.2.3](https://github.com/ttacon/render-api/compare/v1.2.2...v1.2.3) (2026-11-07)
 
 
