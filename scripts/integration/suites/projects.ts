@@ -23,7 +23,7 @@ export const projectsSuite: TestSuite = {
       // ctx.assertDefined(project.id, 'Project has ID');
       // ctx.assertEqual(project.name, projectName, 'Project name matches');
       // ctx.log(`  Created project: ${project.id}`, 'debug');
-      projectId = 'prj-d61ho1m3jp1c738qcnr0'
+      projectId = 'prj-d61ho1m3jp1c738qcnr0';
 
       // RETRIEVE
       ctx.log('Retrieving project...');

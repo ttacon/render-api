@@ -278,6 +278,34 @@ bun run check
 RENDER_API_KEY=xxx bun run repl
 ```
 
+## Read-Only Smoke Test
+
+Catches response schema mismatches (the `RenderValidationError` "type errors" that
+only show up against the real API) by exercising every read/list operation in the
+client against your live Render account. Completely read-only — no resources are
+created, updated, or deleted.
+
+```bash
+# Run all read/list checks (owner ID is discovered automatically)
+RENDER_API_KEY=rnd_xxx bun run read-smoke
+
+# Target a specific service for nested reads (deploys, env vars, etc.)
+RENDER_API_KEY=rnd_xxx bun run read-smoke -- --service srv-xxxx
+
+# Only run certain checks, or skip noisy ones
+RENDER_API_KEY=rnd_xxx bun run read-smoke -- --only services,postgres
+RENDER_API_KEY=rnd_xxx bun run read-smoke -- --skip metrics,logs
+
+# List available checks
+bun run read-smoke:list
+```
+
+Failures are classified in the summary so schema mismatches (fix these) stand
+out from plain API errors (e.g. 404s for features not enabled on your account).
+The script exits non-zero if any step fails, so it can be used as a pre-release
+gate. Optional env vars: `RENDER_OWNER_ID` (override workspace), `RENDER_DEBUG`
+(verbose request logging).
+
 ## License
 
 MIT

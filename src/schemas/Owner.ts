@@ -5,8 +5,8 @@ import { z } from 'zod';
 // ============================================================================
 
 export const IPAllowlistSchema = z.object({
-    cidrBlock: z.string(),
-    description: z.string(),  
+  cidrBlock: z.string(),
+  description: z.string(),
 });
 export type IPAllowlist = z.infer<typeof IPAllowlistSchema>;
 

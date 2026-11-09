@@ -37,6 +37,8 @@
     "repl": "bun scripts/repl.ts",
     "integration": "bun run scripts/integration-test.ts",
     "integration:ci": "bun run scripts/integration-test.ts --skip services",
+    "read-smoke": "bun run scripts/read-smoke-test.ts",
+    "read-smoke:list": "bun run scripts/read-smoke-test.ts --list",
     "prepublishOnly": "bun run build"
   },
   "repository": {

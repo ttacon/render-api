@@ -2,7 +2,7 @@
 
 /**
  * Test script to verify debug logging functionality
- * 
+ *
  * Usage:
  *   RENDER_API_KEY=xxx bun run scripts/test-debug.ts
  *   RENDER_DEBUG=true RENDER_API_KEY=xxx bun run scripts/test-debug.ts
@@ -35,7 +35,7 @@ if (DEBUG) {
 }
 
 // Create client with programmatic debug setting (overrides env var)
-const render = new RenderClient({ 
+const render = new RenderClient({
   apiKey: API_KEY,
   debug: DEBUG,
 });
@@ -65,7 +65,7 @@ try {
   console.log('\x1b[32m✓ Success:\x1b[0m');
   console.log(`  Found ${items.length} service(s)`);
   console.log(`  Has more: ${hasMore}`);
-  
+
   if (items.length > 0) {
     console.log('\n  Services:');
     for (const svc of items) {
