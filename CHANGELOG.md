@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/ttacon/render-api/compare/v1.2.4...v1.2.5) (2026-11-21)
+
+
+### Bug Fixes
+
+* allow optional redis kv values ([872b67d](https://github.com/ttacon/render-api/commit/872b67dc68170ab1786a266af172716379d09643))
+
 ## [1.2.4](https://github.com/ttacon/render-api/compare/v1.2.3...v1.2.4) (2026-11-09)
 
 
